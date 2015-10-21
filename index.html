@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo App</title>
+  </head>
+  <body>
+    <div id="form"></div>
+    <div id="list"></div>
+    <script id="formView" type="text/template">
+      <h2>New Todo</h2>
+      <form id="formAddTodo" name="addtodo" method="post" action="/addtodo">
+        <input id="inputTodoTitle" type="text" placeholder="title" name="title">
+        <button id="btnSubmit" type="submit">submit</button>
+      </form>
+    </script>
+    <script id="todoView" type="text/template">
+      <p>"TEST TODO VIEW" title</p>
+    </script>
+    <script id="todosView" type="text/template">
+      <h1>Todos List</h1>
+      <ul>
+        <li></li>
+      </ul>
+    </script>
+    <script src="js/vendor/jquery/dist/jquery.min.js"></script>
+    <script src="js/vendor/underscore/underscore-min.js"></script>
+    <script src="js/vendor/backbone/backbone-min.js"></script>
+    <script src="js/vendor/backbone.marionette/lib/backbone.marionette.min.js"></script>
+    <script src="js/vendor/requirejs/require.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

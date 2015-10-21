@@ -1,0 +1,23 @@
+{
+  "name": "todo_frontend",
+  "version": "0.0.0",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone.marionette": "~2.4.3",
+    "backbone": "~1.2.3",
+    "underscore": "latest",
+    "jquery": "latest",
+    "requirejs": "~2.1.20"
+  }
+}

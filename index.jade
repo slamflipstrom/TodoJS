@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Todo App
+  body
+
+    #form
+    #list
+
+    script(id="formView", type="text/template")
+      h2 New Todo
+      form#formAddTodo(name="addtodo", method="post", action="/addtodo")
+        input#inputTodoTitle(type="text", placeholder="title", name="title")
+        button#btnSubmit(type="submit") submit
+
+    script(id="todoView", type="text/template")
+      p "TEST TODO VIEW" title
+
+
+    script(id="todosView", type="text/template")
+      h1 Todos List
+      ul
+          li
+
+
+
+    script(src="js/vendor/jquery/dist/jquery.min.js")
+    script(src="js/vendor/underscore/underscore-min.js")
+    script(src="js/vendor/backbone/backbone-min.js")
+    script(src="js/vendor/backbone.marionette/lib/backbone.marionette.min.js")
+    script(src="js/vendor/requirejs/require.js")
+    script(src="app.js")
