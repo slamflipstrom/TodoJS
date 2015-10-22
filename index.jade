@@ -10,11 +10,14 @@ html
     script(id="formView", type="text/template")
       h2 New Todo
       form#formAddTodo(name="addtodo", method="post", action="/addtodo")
+        p Title:
         input#inputTodoTitle(type="text", placeholder="title", name="title")
+        p Due-Date:
+        input#inputTodoDueDate(type="date", name="due_date")
         button#btnSubmit(type="submit") submit
 
     script(id="todoView", type="text/template")
-      p "TEST TODO VIEW" title
+      p "TEST TODO VIEW" 
 
 
     script(id="todosView", type="text/template")

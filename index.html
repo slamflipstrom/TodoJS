@@ -9,12 +9,15 @@
     <script id="formView" type="text/template">
       <h2>New Todo</h2>
       <form id="formAddTodo" name="addtodo" method="post" action="/addtodo">
+        <p>Title:</p>
         <input id="inputTodoTitle" type="text" placeholder="title" name="title">
+        <p>Due-Date:</p>
+        <input id="inputTodoDueDate" type="date" name="due_date">
         <button id="btnSubmit" type="submit">submit</button>
       </form>
     </script>
     <script id="todoView" type="text/template">
-      <p>"TEST TODO VIEW" title</p>
+      <p>"TEST TODO VIEW" </p>
     </script>
     <script id="todosView" type="text/template">
       <h1>Todos List</h1>
