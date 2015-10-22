@@ -32,6 +32,17 @@ var FormView = Marionette.ItemView.extend({
   }
 });
 
+//Router
+var AppRouter = Backbone.Router.extend({
+  routes: {
+    "" : "showIndex"
+  },
+  showIndex : function() {
+    TodoTracker.AppController.showIndex();
+  }
+}); 
+
+//Controller
 var AppController = Marionette.Controller.extend({
   showIndex: function(){
     var TodoView = Marionette.ItemView.extend({
@@ -43,6 +54,7 @@ var AppController = Marionette.Controller.extend({
   }
 });
 
+//Initializer
 TodoTracker.addInitializer(function() {
   TodoTracker.addRegions({
     form: '#form',
@@ -50,7 +62,9 @@ TodoTracker.addInitializer(function() {
   });
 
   TodoTracker.AppController = new AppController();
-  TodoTracker.AppController.showIndex();
+  TodoTracker.Router = new AppRouter();
+
+  Backbone.history.start();
 });
 
 TodoTracker.start();
