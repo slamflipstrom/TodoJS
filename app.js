@@ -1,31 +1,53 @@
 var testData = [
-  { id: 1, title: "Stare lifelessly into a mirror", due_date: ""},
-  { id: 2, title: "Eat entire bag of Sunchips without guilt", due_date: ""},
-  { id: 3, title: "Bug-bomb the apartment", due_date: ""},
+  { id: 1, title: "Stare lifelessly into a mirror", due_date: "10-27-2015", completed: false},
+  { id: 2, title: "Eat entire bag of Sunchips without guilt", due_date: "10-28-2015", completed: false},
+  { id: 3, title: "Bug-bomb the apartment", due_date: "Tomorrow", completed: false},
 ];
 
-var TodoTracker = new Marionette.Application();
+//MODEL//
+var Todo = Backbone.Model.extend({
+  defaults:{
+    title: "",
+    due_date: "",
+    completed: false
+  },
+  validate: function(attrs, opts){
+    if (!(attrs.title)){
+      return "Todo needs a title";
+    }
+  },
+  initialize: function() {
+    this.on('invalid', function(model) {
+      alert(model.validationError);
+    });
+  }
+});
 
-var Todo = Backbone.Model.extend({});
-var Todos = Backbone.Collection.extend({
+var TodosCollection = Backbone.Collection.extend({
   model: Todo
 });
 
+var TodoTracker = new Marionette.Application();
+
+//VIEWS//
 var TodoItemView = Marionette.ItemView.extend({
   tagName : "tr",
-  template: _.template("<td><%=title%><%=due_date%><a href=#delete>Delete</a></td>")
+  template: _.template("<td><%=title%></td><td><%=due_date%></td><td><a href=#markCompleted id=markCompleted>X</a></td>"),
+  events: {
+    'click #markCompleted' : 'markCompleted'
+  },
+  markCompleted: function(ev){
+    ev.preventDefault();
+    TodoTracker.AppController.markCompleted(this.model);
+  }
 });
 
 var TodoListView = Marionette.CollectionView.extend({
   tagName : "table",
   className : "table table-striped",
   childView : TodoItemView,
-  events: {
-    'click #delete' : 'deleteTodo'
-  },
-  deleteTodo: function(ev){
-    ev.preventDefault();
-    TodoTracker.AppController.deleteTodo();
+  onBeforeRender: function(){
+    this.$el.append('<h2>Todo List</h2>');
   }
 });
 
@@ -48,7 +70,15 @@ var FormView = Marionette.ItemView.extend({
   }
 });
 
-//Router
+var CompletedTodoView = Marionette.CollectionView.extend({
+  tagName : "table",
+  className : "table table-striped",
+  onBeforeRender: function(){
+    this.$el.append("<h2>Completed Todo's</h2>");
+  }
+});
+
+//ROUTER//
 var AppRouter = Backbone.Router.extend({
   routes: {
     "" : "showIndex"
@@ -58,29 +88,33 @@ var AppRouter = Backbone.Router.extend({
   }
 }); 
 
-//Controller
+//CONTROLLER//
 var AppController = Marionette.Controller.extend({
   showIndex: function(){
-    var TodoView = Marionette.ItemView.extend({
-      template: '#todoView'
-    });
+    var todoListView = new TodoListView({ collection : TodoTracker.Todos });
+    var completedTodoListView = new CompletedTodoView({ collection : TodoTracker.CompletedTodos });
 
-    TodoTracker.form.show(new FormView({ collection: TodoTracker.todos }));
-    var todoListView = new TodoListView({collection : new Backbone.Collection(testData) });
+    TodoTracker.form.show(new FormView());
     TodoTracker.list.show(todoListView);
+    TodoTracker.completedlist.show(completedTodoListView);
+  },
+  markCompleted: function(todo){
+    todo.set({"completed": true});
+    console.log('Todo.completed should be true and it is  ' + todo.completed); 
   }
 });
 
-//Initializer
+//INITIALIZER
 TodoTracker.addInitializer(function() {
   TodoTracker.addRegions({
     form: '#form',
-    list: '#list'
+    list: '#list',
+    completedlist: '#completedlist'
   });
 
+  TodoTracker.Todos = new TodosCollection(testData);
   TodoTracker.AppController = new AppController();
   TodoTracker.Router = new AppRouter();
-
   Backbone.history.start();
 });
 
