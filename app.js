@@ -16,6 +16,12 @@ var Todo = Backbone.Model.extend({
       return "Todo needs a title";
     }
   },
+  toggle: function () {
+		return this.set('completed', !this.isCompleted());
+	},
+	isCompleted: function () {
+		return this.get('completed');
+	},
   initialize: function() {
     this.on('invalid', function(model) {
       alert(model.validationError);
@@ -24,7 +30,8 @@ var Todo = Backbone.Model.extend({
 });
 
 var TodosCollection = Backbone.Collection.extend({
-  model: Todo
+  model: Todo,
+  localStorage: new Backbone.LocalStorage('todos_collection')
 });
 
 var TodoTracker = new Marionette.Application();
@@ -100,7 +107,8 @@ var AppController = Marionette.Controller.extend({
   },
   markCompleted: function(todo){
     todo.set({"completed": true});
-    console.log('Todo.completed should be true and it is  ' + todo.completed); 
+    todo.c = todo.get('completed');
+    console.log('Todo.completed should be true and it is  ' + todo.c); 
   }
 });
 
