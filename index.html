@@ -8,14 +8,13 @@
     <div id="list"></div>
     <div id="completedlist"></div>
     <script id="formView" type="text/template">
-      <h2>New Todo</h2>
-      <form id="formAddTodo" name="addtodo" method="post" action="/addtodo">
+      <h2>New Todo
         <p>Title:</p>
-        <input id="inputTodoTitle" type="text" placeholder="title" name="title">
+        <input id="title" type="text" name="title">
         <p>Due-Date:</p>
-        <input id="inputTodoDueDate" type="date" name="due_date">
-        <button id="btnSubmit" type="submit">submit</button>
-      </form>
+        <input id="due_date" type="date" name="due_date">
+        <button id="submit" type="submit">Submit</button>
+      </h2>
     </script>
     <script id="todoView" type="text/template">
       <p>"TEST TODO VIEW" </p>
@@ -31,6 +30,9 @@
     <script src="js/vendor/backbone/backbone-min.js"></script>
     <script src="js/vendor/backbone.marionette/lib/backbone.marionette.min.js"></script>
     <script src="js/vendor/backbone.localstorage/backbone.localStorage-min.js"></script>
-    <script src="app.js"></script>
+    <script src="js/todo.model.js"></script>
+    <script src="js/todo.layout.js"></script>
+    <script src="js/todo.controller.js"></script>
+    <script src="js/todo.app.js"></script>
   </body>
 </html>

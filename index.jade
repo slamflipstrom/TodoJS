@@ -10,12 +10,11 @@ html
 
     script(id="formView", type="text/template")
       h2 New Todo
-      form#formAddTodo(name="addtodo", method="post", action="/addtodo")
         p Title:
-        input#inputTodoTitle(type="text", placeholder="title", name="title")
+        input#title(type="text", name="title")
         p Due-Date:
-        input#inputTodoDueDate(type="date", name="due_date")
-        button#btnSubmit(type="submit") submit
+        input#due_date(type="date", name="due_date")
+        button#submit(type="submit") Submit
 
     script(id="todoView", type="text/template")
       p "TEST TODO VIEW" 
@@ -33,4 +32,7 @@ html
     script(src="js/vendor/backbone/backbone-min.js")
     script(src="js/vendor/backbone.marionette/lib/backbone.marionette.min.js")
     script(src="js/vendor/backbone.localstorage/backbone.localStorage-min.js")
-    script(src="app.js")
+    script(src="js/todo.model.js")
+    script(src="js/todo.layout.js")
+    script(src="js/todo.controller.js")
+    script(src="js/todo.app.js")
