@@ -16,14 +16,12 @@
         <button id="submit" type="submit">Submit</button>
       </h2>
     </script>
-    <script id="todoView" type="text/template">
-      <p>"TEST TODO VIEW" </p>
+    <script id="todoView" type="text/template"><td><%=title%></td><td><%=due_date%></td><td><button id=markCompleted>X</button></td>
     </script>
     <script id="todoListView" type="text/template">
       <h1>Todos List</h1>
-      <ul>
-        <li></li>
-      </ul>
+    </script>
+    <script id="completedTodoListView" type="text/template"><td><%=title%></td><td><%=due_date%></td>
     </script>
     <script src="js/vendor/jquery/dist/jquery.min.js"></script>
     <script src="js/vendor/underscore/underscore-min.js"></script>

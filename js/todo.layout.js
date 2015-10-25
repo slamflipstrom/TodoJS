@@ -1,7 +1,7 @@
 //VIEWS//
 var TodoItemView = Marionette.ItemView.extend({
   tagName : "tr",
-  template: _.template("<td><%=title%></td><td><%=due_date%></td><td><button id=markCompleted>X</button></td>"),
+  template: "#todoView",
   events: {
     'click #markCompleted' : 'markCompleted'
   },
@@ -14,9 +14,13 @@ var TodoItemView = Marionette.ItemView.extend({
 var TodoListView = Marionette.CollectionView.extend({
   tagName : "table",
   className : "table table-striped",
+  selectable: true,
   childView : TodoItemView,
   onBeforeRender: function(){
-    this.$el.append('<h2>Todo List</h2>');
+    this.$el.prepend('<th>Todo List</th>');
+  },
+  selectableModelsFilter : function(model){
+    return model.get("completed") === false;
   }
 });
 
@@ -29,25 +33,23 @@ var FormView = Marionette.ItemView.extend({
   events: {
     'click #submit': 'createNewTodo'
   },
-  createNewTodo: function(e){
+  createNewTodo: function(){
     var todoTitle = this.ui.title.val().trim(),
         todoDueDate = this.ui.due_date.val().trim();
-    console.log(todoTitle + ' <-- title');
-    console.log(todoDueDate + ' <-- due date');
     this.collection.add({
       title: todoTitle,
       due_date: todoDueDate
     });
-    console.log('tried to add');    
     this.ui.title.val("");
     this.ui.due_date.val("");
   }
 });
 
 var CompletedTodoView = Marionette.CollectionView.extend({
+  childView : TodoItemView,
   tagName : "table",
   className : "table table-striped",
   onBeforeRender: function(){
-    this.$el.append("<h2>Completed Todo's</h2>");
+    this.$el.append("<th>Completed Todo's</th>");    
   }
 });

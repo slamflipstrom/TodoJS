@@ -18,7 +18,7 @@ var Todo = Backbone.Model.extend({
     }
   },
   toggle: function () {
-		return this.set('completed', !this.isCompleted());
+		this.set('completed', !this.get("completed"));
 	},
 	isCompleted: function () {
 		return this.get('completed');
@@ -33,15 +33,13 @@ var Todo = Backbone.Model.extend({
 var TodosCollection = Backbone.Collection.extend({
   model: Todo,
   localStorage: new Backbone.LocalStorage('todos_collection'),
-  getCompleted: function () {
-		return this.filter(this._isCompleted);
-	},
-	getActive: function () {
-		return this.reject(this._isCompleted);
-	},
-	_isCompleted: function (todo) {
-		return todo.isCompleted();
-	}
+  comparator: 'completed',
+  completed: function() {
+    return this.where({completed: true});
+  },
+  active: function() {
+    return this.where({completed: false});
+  }
 });
 
 var TodoTracker = new Marionette.Application();

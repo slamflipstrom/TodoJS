@@ -17,15 +17,17 @@ html
         button#submit(type="submit") Submit
 
     script(id="todoView", type="text/template")
-      p "TEST TODO VIEW" 
+      != '<td><%=title%></td>'
+      != '<td><%=due_date%></td>'
+      != '<td><button id=markCompleted>X</button></td>'
 
 
     script(id="todoListView", type="text/template")
       h1 Todos List
-      ul
-          li
 
-
+    script(id="completedTodoListView" type="text/template")
+      != '<td><%=title%></td>'
+      != '<td><%=due_date%></td>'
 
     script(src="js/vendor/jquery/dist/jquery.min.js")
     script(src="js/vendor/underscore/underscore-min.js")

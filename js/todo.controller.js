@@ -3,7 +3,7 @@ var AppController = Marionette.Controller.extend({
   showIndex: function(){
     var newTodoView = new FormView({ collection: TodoTracker.Todos }); 
     var todoListView = new TodoListView({ collection : TodoTracker.Todos });
-    var completedTodoListView = new CompletedTodoView({ collection : TodoTracker.CompletedTodos });
+    var completedTodoListView = new CompletedTodoView();
 
     TodoTracker.form.show(newTodoView);
     TodoTracker.list.show(todoListView);
