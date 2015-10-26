@@ -16,10 +16,16 @@ var TodoListView = Marionette.CollectionView.extend({
   className : "table table-striped",
   selectable: true,
   childView : TodoItemView,
+  collectionEvents: {
+    'change' : 'fieldsChanged'
+  },
+  fieldsChanged: function(){
+    this.render();
+  },
   onBeforeRender: function(){
     this.$el.prepend('<th>Todo List</th>');
   },
-  selectableModelsFilter : function(model){
+  filter : function(model){
     return model.get("completed") === false;
   }
 });
@@ -49,7 +55,17 @@ var CompletedTodoView = Marionette.CollectionView.extend({
   childView : TodoItemView,
   tagName : "table",
   className : "table table-striped",
-  onBeforeRender: function(){
+  selectable : true,
+  collectionEvents: {
+    'change': 'fieldsChanged'
+  },
+  fieldsChanged: function(){
+    this.render();
+  },
+  onBeforeRender : function(){
     this.$el.append("<th>Completed Todo's</th>");    
+  },
+  filter : function(model){
+    return model.get("completed") === true;
   }
 });

@@ -3,7 +3,7 @@ var AppController = Marionette.Controller.extend({
   showIndex: function(){
     var newTodoView = new FormView({ collection: TodoTracker.Todos }); 
     var todoListView = new TodoListView({ collection : TodoTracker.Todos });
-    var completedTodoListView = new CompletedTodoView();
+    var completedTodoListView = new CompletedTodoView({ collection : TodoTracker.Todos });
 
     TodoTracker.form.show(newTodoView);
     TodoTracker.list.show(todoListView);
@@ -12,6 +12,6 @@ var AppController = Marionette.Controller.extend({
   markCompleted: function(todo){
     todo.set({"completed": true});
     todo.c = todo.get('completed');
-    console.log('Todo.completed should be true and it is  ' + todo.c); 
+    todo.save()
   }
 });

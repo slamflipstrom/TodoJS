@@ -30,16 +30,29 @@ var Todo = Backbone.Model.extend({
   }
 });
 
+
+
 var TodosCollection = Backbone.Collection.extend({
   model: Todo,
   localStorage: new Backbone.LocalStorage('todos_collection'),
   comparator: 'completed',
+  initialize: function(){
+    this.on("add", function(){
+      console.log("update")
+    })
+  },
   completed: function() {
     return this.where({completed: true});
   },
   active: function() {
     return this.where({completed: false});
+  },
+  parse: function(response){
+    console.log(response)
+      return response
   }
 });
+
+
 
 var TodoTracker = new Marionette.Application();

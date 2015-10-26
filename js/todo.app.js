@@ -20,9 +20,8 @@ TodoTracker.addInitializer(function() {
 
   TodoTracker.Todos = new TodosCollection(testData);
   TodoTracker.AppController = new AppController();
+
   TodoTracker.Router = new AppRouter();
-  console.log(TodoTracker.Todos.active());
-  console.log(TodoTracker.Todos.completed());
   Backbone.history.start();
 });
 
