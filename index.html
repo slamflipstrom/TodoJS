@@ -2,26 +2,46 @@
 <html>
   <head>
     <title>Todo App</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <h1>MarionetteJS Todo List</h1>
     <div id="form"></div>
-    <div id="list"></div>
-    <div id="completedlist"></div>
+    <div class="todolist">
+      <h2>Active Todo's</h2>
+      <div class="tableheaders">
+        <h5 id="title">Title</h5>
+        <h5 id="duedate">Due Date</h5>
+        <h5 id="markcomplete">Mark Complete</h5>
+      </div>
+      <div id="list"></div>
+    </div>
+    <div class="todolist">
+      <h2>Completed Todo's</h2>
+      <div class="tableheaders">
+        <h5 id="title">Title</h5>
+        <h5 id="duedate">Due Date</h5>
+        <h5 id="markcomplete">Mark Complete</h5>
+      </div>
+      <div id="completedlist"></div>
+    </div>
     <script id="formView" type="text/template">
-      <h2>New Todo
-        <p>Title:</p>
-        <input id="title" type="text" name="title">
-        <p>Due-Date:</p>
-        <input id="due_date" type="date" name="due_date">
-        <button id="submit" type="submit">Submit</button>
-      </h2>
+      <h2>New Todo</h2>
+      <div id="inputheader">
+        <h5 id="title">Title:</h5>
+        <h5 id="duedate">Due-Date:</h5>
+      </div>
+      <div id="inputs">
+        <input id="title" type="text" name="title" class="new_todo">
+        <input id="due_date" type="date" name="due_date" class="new_todo">
+        <button id="submit" type="submit" class="button round">Submit</button>
+      </div>
     </script>
-    <script id="todoView" type="text/template"><td><%=title%></td><td><%=due_date%></td><td><button id=markCompleted>X</button></td>
+    <script id="todoView" type="text/template"><td class="title"><div><%=title%></div></td><td class="due_date"><%=due_date%></td><td><button class="button round" id=markCompleted>X</button></td>
     </script>
-    <script id="todoListView" type="text/template">
-      <h1>Todos List</h1>
-    </script>
-    <script id="completedTodoListView" type="text/template"><td><%=title%></td><td><%=due_date%></td>
+    <script id="todoListView" type="text/template"></script>
+    <script id="completedTodoListView" type="text/template">
+      <h1>Completed Todos</h1><td><%=title%></td><td class="due_date"><%=due_date%></td>
     </script>
     <script src="js/vendor/jquery/dist/jquery.min.js"></script>
     <script src="js/vendor/underscore/underscore-min.js"></script>

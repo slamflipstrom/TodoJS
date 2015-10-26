@@ -22,9 +22,6 @@ var TodoListView = Marionette.CollectionView.extend({
   fieldsChanged: function(){
     this.render();
   },
-  onBeforeRender: function(){
-    this.$el.prepend('<th>Todo List</th>');
-  },
   filter : function(model){
     return model.get("completed") === false;
   }
@@ -46,6 +43,7 @@ var FormView = Marionette.ItemView.extend({
       title: todoTitle,
       due_date: todoDueDate
     });
+    console.log(todoTitle);
     this.ui.title.val("");
     this.ui.due_date.val("");
   }
@@ -62,10 +60,10 @@ var CompletedTodoView = Marionette.CollectionView.extend({
   fieldsChanged: function(){
     this.render();
   },
-  onBeforeRender : function(){
-    this.$el.append("<th>Completed Todo's</th>");    
-  },
   filter : function(model){
     return model.get("completed") === true;
+  },
+  isEmpty: function(collection) {
+    return false;
   }
 });

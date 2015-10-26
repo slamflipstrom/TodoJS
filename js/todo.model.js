@@ -20,9 +20,6 @@ var Todo = Backbone.Model.extend({
   toggle: function () {
 		this.set('completed', !this.get("completed"));
 	},
-	isCompleted: function () {
-		return this.get('completed');
-	},
   initialize: function() {
     this.on('invalid', function(model) {
       alert(model.validationError);
@@ -38,7 +35,6 @@ var TodosCollection = Backbone.Collection.extend({
   comparator: 'completed',
   initialize: function(){
     this.on("add", function(){
-      console.log("update")
     })
   },
   completed: function() {

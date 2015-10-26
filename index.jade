@@ -2,32 +2,51 @@ doctype html
 html
   head
     title Todo App
+    link(rel="stylesheet" href="css/style.css")
   body
-
+    h1 MarionetteJS Todo List
+    
     #form
-    #list
-    #completedlist
+
+    .todolist
+      h2 Active Todo's
+      .tableheaders
+        h5#title Title
+        h5#duedate Due Date
+        h5#markcomplete Mark Complete
+      #list
+
+    .todolist
+      h2 Completed Todo's
+      .tableheaders
+        h5#title Title
+        h5#duedate Due Date
+        h5#markcomplete Mark Complete
+      #completedlist
 
     script(id="formView", type="text/template")
       h2 New Todo
-        p Title:
-        input#title(type="text", name="title")
-        p Due-Date:
-        input#due_date(type="date", name="due_date")
-        button#submit(type="submit") Submit
+      #inputheader
+        h5#title Title:
+        h5#duedate Due-Date:
+      #inputs
+        input#title(type="text", name="title" class="new_todo")
+        input#due_date(type="date", name="due_date" class="new_todo")
+        button#submit(type="submit" class="button round") Submit
 
     script(id="todoView", type="text/template")
-      != '<td><%=title%></td>'
-      != '<td><%=due_date%></td>'
-      != '<td><button id=markCompleted>X</button></td>'
+      != '<td class="title"><div><%=title%></div></td>'
+      != '<td class="due_date"><%=due_date%></td>'
+      != '<td><button class="button round" id=markCompleted>X</button></td>'
 
 
     script(id="todoListView", type="text/template")
-      h1 Todos List
+
 
     script(id="completedTodoListView" type="text/template")
+      h1 Completed Todos
       != '<td><%=title%></td>'
-      != '<td><%=due_date%></td>'
+      != '<td class="due_date"><%=due_date%></td>'
 
     script(src="js/vendor/jquery/dist/jquery.min.js")
     script(src="js/vendor/underscore/underscore-min.js")

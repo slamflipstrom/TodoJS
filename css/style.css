@@ -1,0 +1,69 @@
+@import url(foundation.css);
+body {
+  margin: 0 5% 0 5%; }
+
+#form {
+  margin-bottom: 50px;
+  text-align: center; }
+  #form input.new_todo {
+    display: inline-block;
+    width: 30%; }
+  #form #inputheader {
+    position: relative; }
+    #form #inputheader h5 {
+      display: inline-block;
+      position: absolute;
+      top: -2.6rem; }
+    #form #inputheader #title {
+      left: 13%; }
+    #form #inputheader #duedate {
+      left: 43%; }
+  #form #inputs {
+    text-align: center; }
+
+#list {
+  margin-bottom: 50px; }
+
+.todolist {
+  margin: 0 auto;
+  text-align: center;
+  max-width: 900px; }
+  .todolist .tableheaders {
+    position: relative; }
+    .todolist .tableheaders #title {
+      left: 35%; }
+    .todolist .tableheaders #duedate {
+      left: 72.5%; }
+    .todolist .tableheaders #markcomplete {
+      left: 82.5%; }
+  .todolist table.table {
+    width: 90%;
+    margin: 0 auto;
+    table-layout: fixed; }
+    .todolist table.table tbody tr td .title div {
+      width: 516px; }
+    .todolist table.table tbody tr td .due_date {
+      width: 100px;
+      font-size: 0.8rem; }
+    .todolist table.table tbody tr td button {
+      margin: 0 auto; }
+  .todolist h5 {
+    display: inline-block;
+    position: absolute;
+    top: -45px; }
+
+h1 {
+  font-size: 28px; }
+
+h2 {
+  margin-bottom: 40px;
+  font-size: 20px; }
+
+button.button.round {
+  border-radius: 11px;
+  background-color: #aed581; }
+
+td.title {
+  width: 515px; }
+
+/*# sourceMappingURL=style.css.map */

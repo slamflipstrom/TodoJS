@@ -27,5 +27,6 @@ bower_components/
 scripts/vendor
 js/vendor
 .sass-cache
+*.css.map
 build/
 dist/
