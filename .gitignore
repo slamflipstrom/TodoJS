@@ -20,13 +20,17 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# CSS & Sass Files #
+######################
+.sass-cache
+css/
+!css/style.css
+
 # Build Systems #
 ######################
 node_modules/
 bower_components/
 scripts/vendor
 js/vendor
-.sass-cache
-*.css.map
 build/
 dist/

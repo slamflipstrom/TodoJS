@@ -12,22 +12,22 @@ body {
     display:inline-block;
     width:30%;
   }
-  #inputheader{
-    position: relative;
-    h5{
-      display: inline-block;  
-      position: absolute;
-      top: -2.6rem;
-    }
-    #title{
-      left: 13%;
-    }
-    #duedate{
-      left: 43%;
-    }
+  .inputheader{
+  }
+  h5{
+    display: inline-block;  
+    position: absolute;
+    top: -2.6rem;
+  }
+  #title_header{
+    left: 17%;
+  }
+  #duedate_header{
+    left: 47%;
   }
   #inputs{
     text-align: center;
+    position: relative;
   }
 }
 
@@ -98,5 +98,5 @@ button.button.round{
 }
 
 td.title{
-  width: 515px;
+  width: 582px;
 }

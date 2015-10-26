@@ -26,10 +26,9 @@ html
 
     script(id="formView", type="text/template")
       h2 New Todo
-      #inputheader
-        h5#title Title:
-        h5#duedate Due-Date:
       #inputs
+        h5#title_header.input_header Title:
+        h5#duedate_header.input_header Due-Date:
         input#title(type="text", name="title" class="new_todo")
         input#due_date(type="date", name="due_date" class="new_todo")
         button#submit(type="submit" class="button round") Submit

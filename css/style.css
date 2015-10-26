@@ -8,18 +8,17 @@ body {
   #form input.new_todo {
     display: inline-block;
     width: 30%; }
-  #form #inputheader {
-    position: relative; }
-    #form #inputheader h5 {
-      display: inline-block;
-      position: absolute;
-      top: -2.6rem; }
-    #form #inputheader #title {
-      left: 13%; }
-    #form #inputheader #duedate {
-      left: 43%; }
+  #form h5 {
+    display: inline-block;
+    position: absolute;
+    top: -2.6rem; }
+  #form #title_header {
+    left: 17%; }
+  #form #duedate_header {
+    left: 47%; }
   #form #inputs {
-    text-align: center; }
+    text-align: center;
+    position: relative; }
 
 #list {
   margin-bottom: 50px; }
@@ -64,6 +63,6 @@ button.button.round {
   background-color: #aed581; }
 
 td.title {
-  width: 515px; }
+  width: 582px; }
 
 /*# sourceMappingURL=style.css.map */
