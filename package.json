@@ -12,6 +12,7 @@
     "backbone": "^1.2.3",
     "backbone.marionette": "^2.4.3",
     "express": "^4.13.3",
+    "jade": "^1.11.0",
     "jquery": "^2.1.4",
     "requirejs": "^2.1.20",
     "underscore": "^1.8.3"
