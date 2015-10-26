@@ -13,9 +13,9 @@ var AppRouter = Backbone.Router.extend({
 //INITIALIZER
 TodoTracker.addInitializer(function() {
   TodoTracker.addRegions({
-    form: '#form',
-    list: '#list',
-    completedlist: '#completedlist'
+    form: "#form",
+    list: "#list",
+    completedlist: "#completedlist"
   });
 
   TodoTracker.Todos = new TodosCollection(testData);

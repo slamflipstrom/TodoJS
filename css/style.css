@@ -2,6 +2,17 @@
 body {
   margin: 0 5% 0 5%; }
 
+h1 {
+  font-size: 28px; }
+
+h2 {
+  margin-bottom: 45px;
+  font-size: 20px; }
+
+button.button.round {
+  border-radius: 11px;
+  background-color: #aed581; }
+
 #form {
   margin-bottom: 50px;
   text-align: center; }
@@ -39,30 +50,20 @@ body {
     width: 90%;
     margin: 0 auto;
     table-layout: fixed; }
-    .todolist table.table tbody tr td .title div {
-      width: 516px; }
-    .todolist table.table tbody tr td .due_date {
-      width: 100px;
-      font-size: 0.8rem; }
-    .todolist table.table tbody tr td button {
-      margin: 0 auto; }
+    .todolist table.table tbody tr td {
+      text-align: center; }
+      .todolist table.table tbody tr td .title div {
+        width: 516px; }
+      .todolist table.table tbody tr td .due_date {
+        width: 100px;
+        font-size: 0.8rem; }
+      .todolist table.table tbody tr td button {
+        margin: 0 auto; }
   .todolist h5 {
     display: inline-block;
     position: absolute;
     top: -45px; }
-
-h1 {
-  font-size: 28px; }
-
-h2 {
-  margin-bottom: 40px;
-  font-size: 20px; }
-
-button.button.round {
-  border-radius: 11px;
-  background-color: #aed581; }
-
-td.title {
-  width: 582px; }
+  .todolist td.title {
+    width: 582px; }
 
 /*# sourceMappingURL=style.css.map */

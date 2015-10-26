@@ -4,6 +4,23 @@ body {
   margin: 0 5% 0 5%;
 }
 
+
+//Body General Stylings
+h1{
+  font-size: 28px;
+}
+
+h2{
+  margin-bottom: 45px;
+  font-size: 20px;
+}
+
+button.button.round{
+  border-radius:11px;
+  background-color: #aed581;
+}
+
+
 //Todo Input Form
 #form{
   margin-bottom: 50px;
@@ -11,8 +28,6 @@ body {
   input.new_todo{
     display:inline-block;
     width:30%;
-  }
-  .inputheader{
   }
   h5{
     display: inline-block;  
@@ -60,6 +75,7 @@ body {
     tbody{
       tr{
         td{
+          text-align: center;
           .title{
             div{
            width: 516px;        
@@ -81,22 +97,7 @@ body {
     position: absolute;
     top: -45px;
   }
-}
-
-h1{
-  font-size: 28px;
-}
-
-h2{
-  margin-bottom: 40px;
-  font-size: 20px;
-}
-
-button.button.round{
-  border-radius:11px;
-  background-color: #aed581;
-}
-
-td.title{
-  width: 582px;
+  td.title{
+    width: 582px;
+  }
 }

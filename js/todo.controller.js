@@ -9,6 +9,7 @@ var AppController = Marionette.Controller.extend({
     TodoTracker.list.show(todoListView);
     TodoTracker.completedlist.show(completedTodoListView);
   },
+
   markCompleted: function(todo){
     todo.toggle()
     todo.save()

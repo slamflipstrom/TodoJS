@@ -3,7 +3,7 @@ var TodoItemView = Marionette.ItemView.extend({
   tagName : "tr",
   template: "#todoView",
   events: {
-    'click #markCompleted' : 'markCompleted'
+    "click #markCompleted" : "markCompleted"
   },
   markCompleted: function(ev){
     ev.preventDefault();
@@ -17,7 +17,7 @@ var TodoListView = Marionette.CollectionView.extend({
   selectable: true,
   childView : TodoItemView,
   collectionEvents: {
-    'change' : 'fieldsChanged'
+    "change" : "fieldsChanged"
   },
   fieldsChanged: function(){
     this.render();
@@ -28,13 +28,13 @@ var TodoListView = Marionette.CollectionView.extend({
 });
 
 var FormView = Marionette.ItemView.extend({
-  template: '#formView',
+  template: "#formView",
   ui: {
-    title: '#title',
-    due_date: '#due_date'
+    title: "#title",
+    due_date: "#due_date"
   },
   events: {
-    'click #submit': 'createNewTodo'
+    "click #submit": "createNewTodo"
   },
   createNewTodo: function(){
     var todoTitle = this.ui.title.val().trim(),
@@ -55,7 +55,7 @@ var CompletedTodoView = Marionette.CollectionView.extend({
   className : "table table-striped",
   selectable : true,
   collectionEvents: {
-    'change': 'fieldsChanged'
+    "change": "fieldsChanged"
   },
   fieldsChanged: function(){
     this.render();

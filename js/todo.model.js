@@ -18,21 +18,19 @@ var Todo = Backbone.Model.extend({
     }
   },
   toggle: function () {
-		this.set('completed', !this.get("completed"));
+		this.set("completed", !this.get("completed"));
 	},
   initialize: function() {
-    this.on('invalid', function(model) {
+    this.on("invalid", function(model) {
       alert(model.validationError);
     });
   }
 });
 
-
-
 var TodosCollection = Backbone.Collection.extend({
   model: Todo,
-  localStorage: new Backbone.LocalStorage('todos_collection'),
-  comparator: 'completed',
+  localStorage: new Backbone.LocalStorage("todos_collection"),
+  comparator: "completed",
   initialize: function(){
     this.on("add", function(){
     })
@@ -48,7 +46,5 @@ var TodosCollection = Backbone.Collection.extend({
       return response
   }
 });
-
-
 
 var TodoTracker = new Marionette.Application();
