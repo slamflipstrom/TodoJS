@@ -1,6 +1,7 @@
 @import url(foundation.css);
 body {
-  margin: 0 5% 0 5%; }
+  margin: 0 5% 0 5%;
+  background-color: #B4E2D6; }
 
 h1 {
   font-size: 28px; }
@@ -11,7 +12,8 @@ h2 {
 
 button.button.round {
   border-radius: 11px;
-  background-color: #aed581; }
+  background-color: #85AFF4;
+  margin-left: 10px; }
 
 #form {
   margin-bottom: 50px;
@@ -65,5 +67,8 @@ button.button.round {
     top: -45px; }
   .todolist td.title {
     width: 582px; }
+
+div#completedlist {
+  margin-bottom: 50px; }
 
 /*# sourceMappingURL=style.css.map */

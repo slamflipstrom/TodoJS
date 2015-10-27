@@ -2,6 +2,7 @@
 
 body {
   margin: 0 5% 0 5%;
+  background-color: #B4E2D6;
 }
 
 
@@ -17,7 +18,8 @@ h2{
 
 button.button.round{
   border-radius:11px;
-  background-color: #aed581;
+  background-color: #85AFF4;
+  margin-left: 10px;
 }
 
 
@@ -100,4 +102,8 @@ button.button.round{
   td.title{
     width: 582px;
   }
+}
+
+div#completedlist{
+  margin-bottom: 50px;
 }
