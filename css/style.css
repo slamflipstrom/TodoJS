@@ -1,19 +1,21 @@
 @import url(foundation.css);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:700,400);
 body {
   margin: 0 5% 0 5%;
   background-color: #C6F6E9; }
 
 h1 {
-  font-size: 28px; }
+  font: 700 30px 'Josefin Sans', sans-serif; }
 
 h2 {
   margin-bottom: 45px;
-  font-size: 20px; }
+  font: 400 20px "Josefin Sans", sans-serif; }
 
 button.button.round {
   border-radius: 11px;
   background-color: #85AFF4;
-  margin-left: 10px; }
+  margin-left: 10px;
+  font: 700 16px 'Josefin Sans', sans-serif; }
 
 #form {
   margin-bottom: 50px;
@@ -24,7 +26,8 @@ button.button.round {
   #form h5 {
     display: inline-block;
     position: absolute;
-    top: -2.6rem; }
+    top: -2.6rem;
+    font: 400 14px "Josefin Sans", sans-serif; }
   #form #title_header {
     left: 17%; }
   #form #duedate_header {
@@ -45,15 +48,16 @@ button.button.round {
     .todolist .tableheaders #title {
       left: 35%; }
     .todolist .tableheaders #duedate {
-      left: 72.5%; }
+      left: 73%; }
     .todolist .tableheaders #markcomplete {
-      left: 82.5%; }
+      left: 83.5%; }
   .todolist table.table {
     width: 90%;
     margin: 0 auto;
     table-layout: fixed; }
     .todolist table.table tbody tr td {
-      text-align: center; }
+      text-align: center;
+      font: 400 14px 'Open Sans', sans-serif; }
       .todolist table.table tbody tr td .title div {
         width: 516px; }
       .todolist table.table tbody tr td .due_date {
@@ -64,7 +68,8 @@ button.button.round {
   .todolist h5 {
     display: inline-block;
     position: absolute;
-    top: -45px; }
+    top: -45px;
+    font: 400 14px "Josefin Sans", sans-serif; }
   .todolist td.title {
     width: 582px; }
 
